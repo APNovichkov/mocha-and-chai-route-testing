@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
 router.get('/:userId', (req, res) => {
     User.findOne({_id: req.params.userId})
     .then(result => {
-        res.json(result)
+        return res.json(result)
     }).catch(err => {
         throw err.message
     })
@@ -65,4 +65,3 @@ router.delete('/:userId', (req, res) => {
 })
 
 module.exports = router
-
